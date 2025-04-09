@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Authentication</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='face_scan.gif') }}" id="faceIcon" alt="Face Scan">
+        <p id="status">Click the button to authenticate.</p>
+        
+        <div id="loading" class="loading-spinner" style="display: none;"></div>
+        
+        <button class="btn" onclick="captureFace()">Capture</button>
+        <button id="registerBtn" class="btn secondary" onclick="showRegister()" style="display: none;">Register</button>
+
+        <div id="registerSection" style="display: none;">
+            <input type="text" id="username" class="input-field" placeholder="Enter your name">
+            <button class="btn" onclick="registerFace()">Register Face</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,178 @@
+/* General Page Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: black;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Container Box */
+.container {
+    width: 90%;
+    max-width: 450px;
+    background: #222;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    border: 2px solid transparent;
+    animation: borderRotate 4s linear infinite;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Animated Border */
+@keyframes borderRotate {
+    0% { border-color: #ff0000; }
+    25% { border-color: #00ff00; }
+    50% { border-color: #0000ff; }
+    75% { border-color: #ffff00; }
+    100% { border-color: #ff0000; }
+}
+
+/* Face Scan Image */
+#faceIcon {
+    width: 120px;
+    display: block;
+    margin: 15px auto;
+    animation: pulse 1.5s infinite alternate, rotateColor 5s infinite linear;
+    transition: transform 0.3s ease-in-out;
+}
+
+#faceIcon:hover {
+    transform: rotate(10deg) scale(1.1);
+}
+
+@keyframes rotateColor {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+/* Status Message */
+#status {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #fff;
+}
+
+/* Input Field */
+input {
+    width: calc(100% - 24px);
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 2px solid #fff;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background: black;
+    color: white;
+}
+
+input:focus {
+    border-color: #ff00ff;
+    box-shadow: 0 0 8px rgba(255, 0, 255, 0.8);
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    margin: 10px auto;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 0.5px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ffff00);
+    background-size: 400% 400%;
+    animation: gradientShift 5s infinite linear;
+    color: black;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Button Hover Effects */
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Sparkle Button Effect */
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 10%, transparent 50%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.4s ease-in-out;
+}
+
+button:hover::after {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+}
+
+/* Register Section */
+#registerSection {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #333;
+    display: none;
+}
+
+/* Loading Animation */
+.loading {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+    position: relative;
+}
+
+.loading::after {
+    content: " .";
+    animation: dots 1.5s steps(3, end) infinite;
+}
+
+@keyframes dots {
+    0% { content: " ."; }
+    33% { content: " .."; }
+    66% { content: " ..."; }
+    100% { content: " ."; }
+}
+
+/* Pulse Effect */
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    to {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
