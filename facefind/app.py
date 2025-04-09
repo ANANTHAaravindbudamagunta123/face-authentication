@@ -8,7 +8,7 @@ import pyttsx3
 
 app = Flask(__name__)
 
-REGISTERED_FACES_DIR = "registered_faces"
+REGISTERED_FACES_DIR = os.path.join("Facedetection", "registered_faces")
 known_face_encodings = []
 known_face_names = {}
 
