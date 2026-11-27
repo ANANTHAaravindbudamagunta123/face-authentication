@@ -2,3 +2,4 @@ Flask
 deepface
 opencv-python
 pyttsx3
+gunicorn
